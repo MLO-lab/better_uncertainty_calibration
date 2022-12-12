@@ -2,9 +2,18 @@ The official source code to [Better Uncertainty Calibration via Proper Scores fo
 
 Also available on [OpenReview](https://openreview.net/forum?id=PikKk2lF6P).
 
-To reproduce the results, do the following.
+In the following, we split up the description of the figures in three categories: ECE simulation, real-world classification (CIFAR-10/100, ImageNet), variance regression (extended Friedman 1, Residiential Housing).
 
-## Classification (Figure 1, 2, 3, 5, 6, and 7)
+
+## ECE estimation of simulated models (Figure 2)
+
+Open and run the jupyter notebook `ECE bias ground truth simulation.ipynb`.
+The plot is directly displayed in the last cell.
+The simulation is light-weight and can be finished quickly on a typical laptop.
+Indeed, we ran the simulation on an M1 MacBook Pro 2021 in minutes.
+
+
+## Classification (Figure 1, 3, 5, 6, and 7)
 
 This section is exclusively about the classification calibration experiments.
 
@@ -35,13 +44,6 @@ To receive all the plots in the paper (and even more), execute
 `python plotting.py`.
 This takes a while (3-6 minutes) and you may receive errors if certain result files are not found.
 Contrary, running the notebooks allows producing and inspecting each plot individually.
-
-### ECE estimation of simulated models (Figure 2)
-
-Open and run the jupyter notebook `ECE bias ground truth simulation.ipynb`.
-The plot is directly displayed in the last cell.
-The simulation is light-weight and can be finished quickly on a typical laptop.
-Indeed, we ran the simulation on an M1 MacBook Pro 2021 in minutes.
 
 
 ## Variance regression (Figure 4, 8, and 9)
