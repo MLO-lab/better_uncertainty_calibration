@@ -49,10 +49,31 @@ Indeed, we ran the simulation on an M1 MacBook Pro 2021 in minutes.
 This section is exclusively about the regression calibration experiments.
 Note, that the DSS score is called PMCC in the code due to technical debt.
 Ideally, this is fixed some time in the future.
-Further, we used major parts of the code from Wiedman et al 2021 (`https://github.com/devmotion/Calibration_ICLR2021`).
+Further, we used major parts of the code from [Wiedmann et al 2021](https://github.com/devmotion/Calibration_ICLR2021).
 But, this also means the regression experiments are done in Julia and require new dependencies being installed compared to the classification experiments.
 
-Again, we ran the experiments on an M1 MacBook Pro 2021, but a run may require up to an hour.
+We used the same dependencies as [Wiedmann et al 2021](https://github.com/devmotion/Calibration_ICLR2021) and the following instructions are copied from there.
+
+(Start of copy)
+
+### Install Julia 
+
+The experiments were performed with Julia 1.5.3. You can download the official binaries from
+the [Julia webpage](https://julialang.org/downloads/).
+
+For increased reproducibility, the `nix` environment in this folder provides a fixed Julia
+binary:
+1. Install [nix](https://github.com/NixOS/nix#installation).
+2. Navigate to this folder and activate the environment by running
+   ```shell
+   nix-shell
+   ```
+   in a terminal.
+ 
+(End of copy)
+
+Again, we ran the experiments on an M1 MacBook Pro 2021, where a run required up to an hour.
+
 
 ### Residential Building (Figure 4 and 8)
 
