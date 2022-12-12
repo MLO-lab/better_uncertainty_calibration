@@ -1,5 +1,7 @@
 The official source code to [Better Uncertainty Calibration via Proper Scores for Classification and Beyond (NeurIPS'22)](https://arxiv.org/abs/2203.07835).
 
+Also available on [OpenReview](https://openreview.net/forum?id=PikKk2lF6P).
+
 To reproduce the results, do the following.
 
 ## Classification (Figure 1, 2, 3, 5, 6, and 7)
@@ -85,3 +87,19 @@ The plots are directly shown in the notebook.
 Open and run the jupyter notebook `recalibration_friedman1.ipynb`.
 To plot the figures, open the jupyter notebook `plotting_recal_regr.ipynb` and set the variable `task` to `friedman1_var`, then run all the cells.
 The plots are directly shown in the notebook.
+
+
+## Citation
+
+If you found this code useful, please cite our paper
+```
+@inproceedings{
+   gruber2022better,
+   title={Better Uncertainty Calibration via Proper Scores for Classification and Beyond},
+   author={Sebastian Gregor Gruber and Florian Buettner},
+   booktitle={Advances in Neural Information Processing Systems},
+   editor={Alice H. Oh and Alekh Agarwal and Danielle Belgrave and Kyunghyun Cho},
+   year={2022},
+   url={https://openreview.net/forum?id=PikKk2lF6P}
+}
+```
