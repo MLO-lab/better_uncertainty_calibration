@@ -1,3 +1,5 @@
+# Better Uncertainty Calibration via Proper Scores for Classification and Beyond
+
 The official source code to [Better Uncertainty Calibration via Proper Scores for Classification and Beyond (NeurIPS'22)](https://arxiv.org/abs/2203.07835).
 
 Also available on [OpenReview](https://openreview.net/forum?id=PikKk2lF6P).
