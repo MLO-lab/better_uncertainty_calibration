@@ -4,7 +4,7 @@ logits/
 results*.csv
 results/
 backup/
-plots/
+plots/**
 data/
 plots_old/
 
