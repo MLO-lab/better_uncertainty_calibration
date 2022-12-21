@@ -4,7 +4,10 @@ The official source code to [Better Uncertainty Calibration via Proper Scores fo
 
 Also available on [OpenReview](https://openreview.net/forum?id=PikKk2lF6P).
 
-In the following, we split up the description of the figures in three categories: ECE simulation, real-world classification (CIFAR-10/100, ImageNet), variance regression (extended Friedman 1, Residiential Housing).
+The classification experiments are all done in Python, while the variance regression ones are in Julia.
+This is because the regression case is built upon [Wiedmann et al 2021](https://github.com/devmotion/Calibration_ICLR2021).
+We split up the (install) description of the figures in these two categories: Classification (ECE simulation, CIFAR-10/100, ImageNet), and variance regression (extended Friedman 1, Residiential Housing).
+This way, you do not have to install Julia if you are only interested in the classification case, or vice versa.
 
 ## Classification
 
