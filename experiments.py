@@ -7,7 +7,7 @@ from matplotlib import rc
 from pathos.multiprocessing import ProcessingPool as Pool
 
 from temperature_scaling import TemperatureScaling, ETScaling
-from errors import BS, sECE, sTCE, sCWCE, sKDECE, sKSCE, dEMsTCE, MMCE, SKCE
+from errors import BS, sECE, sTCE, sCWCE, sKDECE, sKSCE, dEMsTCE
 
 import os
 # supposedly makes multithreading quicker, true though?
@@ -24,8 +24,6 @@ errors = {
     '100b TCE': lambda l, y: sTCE(l, y, bins=100),
     '15b CWCE': sCWCE,
     '100b CWCE': lambda l, y: sCWCE(l, y, bins=100),
-    # 'MMCE': MMCE,
-    # 'SKCE': SKCE,
 }
 
 

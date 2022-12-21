@@ -25,10 +25,8 @@ settings_DIAG = [
 #############################
 parent = 'all'
 exp = Experiments()
-exp.load('results/results_TS_1.csv')
-exp.load('results/results_ETS_1.csv')
-exp.load('results/results_TS_ece_1.csv')
-exp.load('results/results_ETS_ece_1.csv')
+exp.load('results/results_TS.csv')
+exp.load('results/results_ETS.csv')
 
 main_font_scale = 1.25
 main_size = (5, 4)
@@ -66,10 +64,7 @@ for setting in ['densenet40_c10', 'resnet_wide32_c100', 'densenet161_imgnet']:
         save_file='squared_{}_{}'.format(parent, setting), use_root=False)
 
 exp = Experiments()
-exp.load('results/results_DIAG_1.csv')
-exp.load('results/results_DIAG_2.csv')
-exp.load('results/results_DIAG_ece_1.csv')
-exp.load('results/results_DIAG_ece_2.csv')
+exp.load('results/results_DIAG.csv')
 
 for setting in ['resnet50pre_cars', 'resnet50_nts_birds', 'resnet101_cars', 'resnet101pre_cars', 'pnasnet5_large_imgnet']:
     exp.plot_CE(
@@ -80,9 +75,7 @@ for setting in ['resnet50pre_cars', 'resnet50_nts_birds', 'resnet101_cars', 'res
         save_file='squared_{}_{}'.format(parent, setting), size=size_subs,
         font_scale=font_scale_subs, use_root=False)
 
-files = [
-    'results/results_{}_1.csv', 'results/results_{}_2.csv',
-    'results/results_{}_ece_1.csv', 'results/results_{}_ece_2.csv']
+files = ['results/results_{}.csv',]
 
 ######################## uncomment above
 
