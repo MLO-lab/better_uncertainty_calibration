@@ -1,21 +1,15 @@
 import bisect
 import numpy as np
 import torch
-try:
-    from KDEpy import FFTKDE
-except ImportError:
-    Warning('KDEpy not installed; only relevant for KDE CE')
 from netcal.metrics import MMCE as _MMCE
-
-# # the following fixes an import error, no idea why though
-# from julia.api import Julia
-# jl = Julia(compiled_modules=False)
-# from pycalibration import ca
-
 from scipy.special import softmax
 from sklearn.metrics import log_loss, mean_squared_error, accuracy_score
 from sklearn.preprocessing import label_binarize
 from typing import List, Tuple, TypeVar
+try:
+    from KDEpy import FFTKDE
+except ImportError:
+    Warning('KDEpy not installed; only relevant for KDE CE')
 
 # We use several implementations of related work.
 # This includes:
@@ -729,14 +723,3 @@ def MMCE(logits, labels):
     mmce = _MMCE()
     scores = softmax(logits, axis=1)
     return mmce.measure(scores, labels)
-
-
-def SKCE(logits, labels):
-    pass
-    # skce = ca.SKCE(ca.tensor(ca.ExponentialKernel(), ca.WhiteKernel()))
-    # skce = ca.SKCE(
-    #     ca.tensor(ca.ExponentialKernel(), ca.WhiteKernel()), unbiased=True,
-    #     blocksize=2)
-    # scores = softmax(logits, axis=1)
-    # scores.dtype = np.float64
-    # return skce(ca.RowVecs(scores), labels.flatten())
