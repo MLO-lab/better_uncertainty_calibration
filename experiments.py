@@ -142,11 +142,7 @@ class Experiments:
 
             return pd.DataFrame(runs)
 
-        # pool = Pool()
-        # results = pool.map(iter_func, repeated_sizes)
-        # results = map(iter_func, repeated_sizes)
         results = []
-        import pdb; pdb.set_trace()
         for rs in repeated_sizes:
             results.append(iter_func(rs))
         results = pd.concat(results)
@@ -197,9 +193,6 @@ class Experiments:
 
             return pd.DataFrame(runs)
 
-        # pool = Pool()
-        # results = pool.map(iter_func, repeated_sizes)
-        # results = map(iter_func, repeated_sizes)
         results = []
         for rs in repeated_sizes:
             results.append(iter_func(rs))
