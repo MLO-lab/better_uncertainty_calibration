@@ -28,12 +28,12 @@ Indeed, we ran the simulation on an M1 MacBook Pro 2021 in minutes.
 
 ### Real-world data (Figure 1, 3, 5, 6, and 7)
 
-This section is exclusively about the real-world classification calibration experiments.
+This section is about the real-world classification calibration experiments.
 
 #### Logits
 
-The logits are pretrained from `https://github.com/markus93/NN_calibration/tree/master/logits` and `https://github.com/AmirooR/IntraOrderPreservingCalibration`.
-For quality of life and backup redundancy, we also provide them in [this Google Drive link](https://drive.google.com/drive/folders/10XVg_anBCWmjzjh_Hb-A7GYcgjHLypax?usp=sharing). Download the folder `logits` and move it into this repository.
+The logits are pretrained from [Kull et al 2019](https://github.com/markus93/NN_calibration/tree/master/logits) and [Rahimi et al 2020](https://github.com/AmirooR/IntraOrderPreservingCalibration).
+For quality of life and backup redundancy, we also provide them in [this Google Drive folder](https://drive.google.com/drive/folders/10XVg_anBCWmjzjh_Hb-A7GYcgjHLypax?usp=sharing). To download the folder, simply run `gdown https://drive.google.com/drive/u/1/folders/10XVg_anBCWmjzjh_Hb-A7GYcgjHLypax -O logits --folder`.
 
 #### Running the experiments (Figure 1, 3, 5, 6, and 7)
 
@@ -41,14 +41,12 @@ Execute `bash run_experiments.sh`.
 This will take several days if the used CPU has only few cores.
 Lower the parameter `start_rep` to lower runtime.
 This will increase the variance of the results.
-To make the results more stable, the command can be executed multiple times (results are appended instead of overwritten).
-Indeed, we ran it twice.
+The command can also be executed multiple times (results are appended instead of overwritten; we ran it twice).
+The seeds are set according to the local time and differ for each rerun.
+The sample size should be large enough such that the seed does not matter.
+Setting seeds manually is supported and ours are stored in our result files for reproducibility.
 Upon request, we can provide our result files.
-The seeds are set automatically, since we set the samples to a size where the seed should
-not matter anymore.
-Setting a seed manually is supported for reproducibility, even though this is against
-the nature of the experiments.
-All results will be stored in the `results/` folder.
+All results are located in the `results/` folder.
 
 #### Plotting (Figure 1, 3, 5, 6, and 7)
 
