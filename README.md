@@ -6,8 +6,16 @@ Also available on [OpenReview](https://openreview.net/forum?id=PikKk2lF6P).
 
 In the following, we split up the description of the figures in three categories: ECE simulation, real-world classification (CIFAR-10/100, ImageNet), variance regression (extended Friedman 1, Residiential Housing).
 
+## Classification
 
-## ECE estimation of simulated models (Figure 2)
+### Install
+
+After cloning this repository, create a conda environment via the provided yaml file.
+For this, install Anaconda and run `conda env create -f condaenv.yml`
+(like [here](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)).
+Then, activate the enironment with `conda activate unc_cal`.
+
+### ECE estimation of simulated models (Figure 2)
 
 Open and run the jupyter notebook `ECE bias ground truth simulation.ipynb`.
 The plot is directly displayed in the last cell.
@@ -15,16 +23,16 @@ The simulation is light-weight and can be finished quickly on a typical laptop.
 Indeed, we ran the simulation on an M1 MacBook Pro 2021 in minutes.
 
 
-## Classification (Figure 1, 3, 5, 6, and 7)
+### Real-world data (Figure 1, 3, 5, 6, and 7)
 
-This section is exclusively about the classification calibration experiments.
+This section is exclusively about the real-world classification calibration experiments.
 
-### Logits
+#### Logits
 
 The logits are pretrained from `https://github.com/markus93/NN_calibration/tree/master/logits` and `https://github.com/AmirooR/IntraOrderPreservingCalibration`.
 For quality of life and backup redundancy, we also provide them in [this Google Drive link](https://drive.google.com/drive/folders/10XVg_anBCWmjzjh_Hb-A7GYcgjHLypax?usp=sharing). Download the folder `logits` and move it into this repository.
 
-### Running the experiments (Figure 1, 3, 5, 6, and 7)
+#### Running the experiments (Figure 1, 3, 5, 6, and 7)
 
 Execute `bash run_experiments.sh`.
 This will take several days if the used CPU has only few cores.
@@ -39,7 +47,7 @@ Setting a seed manually is supported for reproducibility, even though this is ag
 the nature of the experiments.
 All results will be stored in the `results/` folder.
 
-### Plotting (Figure 1, 3, 5, 6, and 7)
+#### Plotting (Figure 1, 3, 5, 6, and 7)
 
 There are two options:
 To receive all the plots in the paper (and even more), execute
