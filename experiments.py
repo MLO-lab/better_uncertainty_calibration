@@ -114,8 +114,9 @@ class Experiments:
         RC_model.fit(logits_val, labels_val)
         logits_test_RC = RC_model.predict(logits_test)
 
+        # test set sizes in descending order
         sizes = np.rint(np.flip(np.logspace(np.log2(start_n), np.log2(n), n_ticks, base=2))).astype(int)
-        # quadratically decrease repetitions
+        # quadratically increase repetitions
         repetitions = np.rint(np.linspace(1, np.sqrt(start_rep), n_ticks) ** 2).astype(int)
 
         repeated_sizes = [s for s, r in zip(sizes, repetitions) for _ in range(r)]
@@ -142,9 +143,8 @@ class Experiments:
 
             return pd.DataFrame(runs)
 
-        results = []
-        for rs in repeated_sizes:
-            results.append(iter_func(rs))
+        pool = Pool()
+        results = pool.map(iter_func, repeated_sizes)
         results = pd.concat(results)
         self.results_df = self.results_df.append(results)
 
@@ -193,9 +193,8 @@ class Experiments:
 
             return pd.DataFrame(runs)
 
-        results = []
-        for rs in repeated_sizes:
-            results.append(iter_func(rs))
+        pool = Pool()
+        results = pool.map(iter_func, repeated_sizes)
         results = pd.concat(results)
         self.results_df = self.results_df.append(results)
 
@@ -891,6 +890,6 @@ if __name__ == '__main__':
             start_rep=args.start_rep,
             ce_types=args.ce_types, seed=args.seed)
 
-    print('Runtime [s]:', time.time() - t)
+    print('Experiment done. Runtime [s]:', time.time() - t)
     exp.save(args.save_file)
-    print(exp.results_df)
+    #print(exp.results_df)
