@@ -37,16 +37,18 @@ For quality of life and backup redundancy, we also provide them in [this Google 
 
 #### Running the experiments (Figure 1, 3, 5, 6, and 7)
 
-Execute `bash run_experiments.sh`.
+All results will be located in the `results/` folder.
+To run all of the experiments, execute `bash run_experiments.sh`.
 This will take several days if the used CPU has only few cores.
 Lower the parameter `start_rep` to lower runtime.
 This will increase the variance of the results.
 The command can also be executed multiple times (results are appended instead of overwritten; we ran it twice).
 The seeds are set according to the local time and differ for each rerun.
 The sample size should be large enough such that the seed does not matter.
-Setting seeds manually is supported and ours are stored in our result files for reproducibility.
-Upon request, we can provide our result files.
-All results are located in the `results/` folder.
+Setting seeds manually is supported and ours are stored in our result files.
+Since the runtime can be infeasible for some CPUs, we also provide our results files in [this Google drive folder](https://drive.google.com/drive/folders/1pP3RhgIdTXpKLArmiyECTo94VcAf0zll?usp=sharing).
+To download the folder, simply run `gdown https://drive.google.com/drive/folders/1pP3RhgIdTXpKLArmiyECTo94VcAf0zll -O results --folder`.
+
 
 #### Plotting (Figure 1, 3, 5, 6, and 7)
 
