@@ -55,7 +55,7 @@ To download the folder, simply run `gdown https://drive.google.com/drive/folders
 There are two options:
 To receive all the plots in the paper (and even more), execute
 `python plotting.py`.
-This takes a while (3-6 minutes) and you may receive errors if certain result files are not found.
+This takes a while (3-6 minutes).
 Contrary, running the notebooks allows producing and inspecting each plot individually.
 
 
