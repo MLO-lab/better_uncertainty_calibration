@@ -61,7 +61,7 @@ class Experiments:
         else:
             self.results_df = loaded_df
         if reset_index:
-            self.results_df.reset_index(inplace=True)
+            self.results_df.reset_index(inplace=True, drop=True)
 
     def reset(self):
         self.results_df = pd.DataFrame(columns=self.columns)
