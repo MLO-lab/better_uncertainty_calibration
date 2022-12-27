@@ -1,6 +1,8 @@
 from experiments import Experiments
 from pathlib import Path
 
+Path("plots/").mkdir(parents=True, exist_ok=True)
+
 # we only plot ~50% of whats possible
 # if you want to see more plots, uncomment the respective parts
 
