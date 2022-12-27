@@ -2,7 +2,7 @@
 
 # create folders if missing
 [ ! -d "results/" ] && mkdir -p "results/"
-[ ! -d "plots/" ] && mkdir -p "plotss/"
+[ ! -d "plots/" ] && mkdir -p "plots/"
 
 # TS
 settings="densenet40_c10 resnet110_SD_c100 densenet40_c100 densenet161_imgnet lenet5_c10 lenet5_c100 resnet_wide32_c10 resnet_wide32_c100 resnet50_birds resnet110_c10 resnet110_c100 resnet110_SD_c10 resnet152_imgnet resnet152_SD_SVHN"
