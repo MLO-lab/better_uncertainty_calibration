@@ -35,6 +35,7 @@ dependencies:
   - fribidi=1.0.10=h36c2ea0_0
   - gcc_impl_linux-64=7.5.0=hda68d29_13
   - gcc_linux-64=7.5.0=h47867f9_32
+  - gdown=4.6.0=pyhd8ed1ab_0
   - gettext=0.19.8.1=h0b5b191_1005
   - gfortran_impl_linux-64=7.5.0=h56cb351_19
   - gfortran_linux-64=7.5.0=h78c8a43_32
