@@ -57,7 +57,7 @@ class Experiments:
     def load(self, filename, append=True, reset_index=True):
         loaded_df = pd.read_csv(filename)
         if append:
-            self.results_df = pd.concat(self.results_df, loaded_df)
+            self.results_df = pd.concat([self.results_df, loaded_df])
         else:
             self.results_df = loaded_df
         if reset_index:
