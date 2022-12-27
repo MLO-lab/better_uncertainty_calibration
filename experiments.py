@@ -54,12 +54,14 @@ class Experiments:
     def save(self, filename):
         self.results_df.to_csv(filename, index=False)
 
-    def load(self, filename, append=True):
+    def load(self, filename, append=True, reset_index=True):
         loaded_df = pd.read_csv(filename)
         if append:
-            self.results_df = self.results_df.append(loaded_df)
+            self.results_df = pd.concat(self.results_df, loaded_df)
         else:
             self.results_df = loaded_df
+        if reset_index:
+            self.results_df.reset_index(inplace=True)
 
     def reset(self):
         self.results_df = pd.DataFrame(columns=self.columns)
