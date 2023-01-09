@@ -889,7 +889,7 @@ if __name__ == '__main__':
         ds = unpickle_probs(args.logits_path)
         exp.add_experiment(
             ds=ds, setting=args.setting, method=args.method,
-            start_rep=args.start_rep,
+            start_n=100, start_rep=args.start_rep,
             ce_types=args.ce_types, seed=args.seed)
 
     print('Experiment done. Runtime [s]:', time.time() - t)
