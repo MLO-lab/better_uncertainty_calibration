@@ -35,19 +35,15 @@ main_size = (5, 4)
 size_subs = (4.5, 3)
 font_scale_subs = 1.55
 
-# # figure 1
-exp.plot_RC_delta(
-    'densenet40_c10', size=main_size, save_file='figure_1', ce_types=ce_types,
-    legend=False, font_scale=main_font_scale)
-
-# figure 2
 c10_settings = [
     'densenet40_c10', 'resnet_wide32_c10', 'resnet110_SD_c10', 'resnet110_c10',
     'lenet5_c10']
+# figure 3b
 exp.lineplot_rsbias(
     save_file='rbias_c10', ce_types=ce_types, settings=c10_settings,
     size=main_size, legend=True, font_scale=main_font_scale)
 
+# figure 3a
 exp.plot_CE(
     'resnet_wide32_c100', ce_types=ce_types, save_file='all_resnet_wide32_c100_large',
     font_scale=main_font_scale, size=main_size)
@@ -56,10 +52,12 @@ exp.get_legend(
     save_file='legend', ce_types=ce_types, size=size_subs, font_scale=1.75,
     padding=7)
 
+# Appendix
 for setting in settings_TS_ETS:
     exp.plot_CE(
         setting, ce_types=ce_types, save_file='{}_{}'.format(parent, setting),
         font_scale=font_scale_subs, size=size_subs)
+# Appendix
 for setting in ['densenet40_c10', 'resnet_wide32_c100', 'densenet161_imgnet']:
     exp.plot_CE(
         setting, ce_types=ce_types, font_scale=font_scale_subs, size=size_subs,
@@ -68,6 +66,7 @@ for setting in ['densenet40_c10', 'resnet_wide32_c100', 'densenet161_imgnet']:
 exp = Experiments()
 exp.load('results/results_DIAG.csv')
 
+# Appendix
 for setting in ['resnet50pre_cars', 'resnet50_nts_birds', 'resnet101_cars', 'resnet101pre_cars', 'pnasnet5_large_imgnet']:
     exp.plot_CE(
         setting, ce_types=ce_types, font_scale=font_scale_subs, size=size_subs,
@@ -119,10 +118,12 @@ exp = Experiments()
 for file in files:
     exp.load(file.format(parent))
 
+# Appendix
 for setting in settings_TS_ETS:
     exp.plot_RC_delta(
         setting, ce_types=ce_types, font_scale=font_scale_subs, size=size_subs,
         save_file='{}_RC_{}'.format(parent, setting))
+# Figure 1a
 for setting in ['densenet40_c10']:  # settings_TS_ETS:
     exp.plot_RC_delta(
         setting, ce_types=ce_types, font_scale=font_scale_subs, size=size_subs,
@@ -136,10 +137,12 @@ exp = Experiments()
 for file in files:
     exp.load(file.format(parent))
 
+# Appendix
 for setting in settings_TS_ETS:  # ['resnet_wide32_c100']:  #
     exp.plot_RC_delta(
         setting, ce_types=ce_types, font_scale=font_scale_subs, size=size_subs,
         save_file='{}_RC_{}'.format(parent, setting))
+# Figure 1b
 for setting in ['resnet_wide32_c100']:  # settings_TS_ETS:
     exp.plot_RC_delta(
         setting, ce_types=ce_types, font_scale=font_scale_subs, size=size_subs,
@@ -153,10 +156,12 @@ exp = Experiments()
 for file in files:
     exp.load(file.format(parent))
 
+# Appendix
 for setting in settings_DIAG:  # ['densenet161_imgnet']:  #
     exp.plot_RC_delta(
         setting, ce_types=ce_types, font_scale=font_scale_subs, size=size_subs,
         save_file='{}_RC_{}'.format(parent, setting))
+# Figure 1c
 for setting in ['densenet161_imgnet']:  # settings_DIAG:
     exp.plot_RC_delta(
         setting, ce_types=ce_types, font_scale=font_scale_subs, size=size_subs,
