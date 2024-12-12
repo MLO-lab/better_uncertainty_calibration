@@ -2,7 +2,7 @@
 
 The official source code to [Better Uncertainty Calibration via Proper Scores for Classification and Beyond (NeurIPS'22)](https://arxiv.org/abs/2203.07835).
 
-Also available on [OpenReview](https://openreview.net/forum?id=PikKk2lF6P).
+Also available on [OpenReview](https://openreview.net/forum?id=PikKk2lF6P) (note that the OpenReview version is outdated and has an invalid Theorem).
 
 The classification experiments are all done in Python, while the variance regression ones are in Julia.
 This is because the regression case is built upon [Wiedmann et al 2021](https://github.com/devmotion/Calibration_ICLR2021).
